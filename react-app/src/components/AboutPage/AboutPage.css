@@ -1,0 +1,106 @@
+.about-page-container {
+    margin-top: 50px;
+    background-image: url("facets.png");
+    background-repeat: repeat;
+    width: 100%;
+    height: 100%;
+    /* display: grid;
+    grid-template-rows: 200px 200px 200px;
+    grid-template-columns: 200px 200px;
+    grid-template-areas:
+    "slideshow slideshow"
+    "track-balances organize-expenses"
+    "add-expenses-easily pay-friends-back"; */
+    place-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+/* .slideshow {
+    grid-area: slideshow;
+}
+
+.track-balances {
+    grid-area: track-balances;
+}
+
+.organize-expenses {
+    grid-area: organize-expenses;
+}
+
+.add-expenses-easily {
+    grid-area: add-expenses-easily;
+}
+
+.pay-friends-back {
+    grid-area: pay-friends-back;
+} */
+
+.slideshow {
+    padding: 50px;
+    text-align: left;
+    /* height: 500px; */
+}
+
+.about-page-images {
+    display: flex;
+    /* flex-wrap: wrap;
+    justify-content: center; */
+    overflow: scroll;
+}
+
+.about-page-images img {
+    min-width: 500px;
+    /* max-width: 500px; */
+}
+
+#swap-text::before {
+    content: " on trips.";
+    color: #1CC29F;
+    font-size: 24pt;
+    font-weight: bolder;
+    animation: swap-text 12s ease-in infinite;
+}
+
+@keyframes swap-text {
+    0% {
+        content: " on trips.";
+        color: #1CC29F;
+    }
+    25% {
+        content: " with housemates.";
+        color: #8656CD;
+    }
+    50% {
+        content: " with your partner.";
+        color: #A6002F;
+    }
+    75% {
+        content: " with anyone.";
+        color: #1CC29F;
+    }
+}
+
+.signup-button {
+    background-color: rgb(82, 197, 167);
+    color: #ffffff;
+    margin-top: 20px;
+    padding: 15px 60px;
+    border-radius: 5px;
+    animation: swap-color 12s ease-in infinite;
+}
+
+@keyframes swap-color {
+    0% {
+        background-color: #1CC29F;
+    }
+    25% {
+        background-color: #8656CD;
+    }
+    50% {
+        background-color: #A6002F;
+    }
+    75% {
+        background-color: #1CC29F;
+    }
+}

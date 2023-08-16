@@ -1,0 +1,160 @@
+p, ul, div, li, a, img h1, h2, h3, h4, section {
+    padding: 0;
+    margin: 0;
+}
+
+.profile-dropdown {
+    position: fixed;
+    background-color: #fff;
+    top: 50px;
+    right: 5px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    border: 1px solid lightgray;
+    box-shadow: 1px 1px 5px 1px darkgray;
+    align-items: start;
+    justify-content: center;
+    padding: 0;
+    width: 150px;
+    background-color: white;
+}
+
+.hidden {
+    display: none;
+}
+
+.header {
+    height: 50px;
+    width: 100%;
+    box-sizing: border-box;
+    position: fixed;
+    top: 0;
+    padding: 0;
+    background-color: white;
+    z-index: 99;
+}
+
+
+
+.header-login {
+    height: 50px;
+    background-color:rgb(66, 202, 164);
+}
+
+.header img {
+    height: 24px;
+    width: 24px;
+}
+
+.nav-btn img {
+    height: 23px;
+    width: 23px;
+    border-radius: 50%;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.title {
+    font-size: 16px;
+    /* text-transform: uppercase; */
+    font-weight: 700;
+    margin-left: 15px;
+    color: #000;
+}
+
+.title-login {
+    color: #fff;
+}
+
+.navigation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 8px;
+    height: 33px;
+}
+
+.navigation-menu {
+    display: flex;
+    gap:10px;
+    position: relative;
+}
+
+.nav-login {
+    color: rgb(66, 202, 164);
+}
+
+.nav-signup {
+    color: #fff;
+    background-color: rgb(66, 202, 164);
+    border-radius: 4px;
+}
+
+.navigation-link {
+    font-size: 15px;
+    padding: 7px 9px;
+}
+
+.nav-btn {
+    height: 33px;
+    border: none;
+    margin: 0;
+    padding: 5px;
+    background-color: rgb(66, 202, 164);
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.nav-btn span {
+    color: #fff;
+    margin-left: 5px;
+}
+
+.nav-btn:hover {
+    background-color: rgb(60, 188, 152) !important;
+}
+
+ul {
+    list-style: none;
+}
+
+.container {
+    width: 95%;
+    margin: 15px auto;
+    text-align: center;
+}
+
+a {
+    text-decoration: none;
+}
+
+.profile-dropdown > * {
+    font-size: 12pt;
+    padding: 5px 10px;
+}
+
+.log-out {
+    margin: 0;
+    border: none;
+    background: none;
+    width: 100%;
+    text-align: left;
+    display: inline-block;
+    border-radius: 0;
+}
+
+.log-out:hover .log-out {
+    background-color: #1CC29F;
+    color: #fff;
+}
+
+.log-out:hover {
+    background-color: #1CC29F;
+    color: #fff;
+}

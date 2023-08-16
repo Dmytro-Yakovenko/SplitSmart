@@ -1,0 +1,117 @@
+p, ul, div, li, a, img, h1, h2, h3, h4, section {
+    padding: 0;
+    margin: 0;
+}
+
+.payment-subheader {
+    display: flex;
+    gap: 10px;
+    padding: 5px;
+}
+
+/* .payment-main-content {
+    margin-top: 30px;
+} */
+
+.payment-main-content-wrapper img {
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.payment-btn {
+    background-color: rgb(208, 106, 71);
+    color: rgb(220, 218, 215);
+    text-shadow: rgb(140, 82, 61) 0px -1px 0px;
+    border: none;
+    padding: 5px;
+    border-radius: 3px;
+    font-size: 11px;
+    box-shadow: rgba(220, 218, 215, 0.2) 0px 1px 0px inset, rgba(24, 26, 27, 0.05) 0px 1px 2px;
+}
+
+.payment-edit-btn {
+    max-width: 86px;
+}
+
+.payment-image-wrapper {
+    width: 84px;
+    height: 84px;
+    border: 1px #ddd solid;
+    align-self: center;
+}
+
+.payment-image-wrapper img {
+    height: 84px;
+    width: 84px;
+}
+
+.payment-main {
+    display: flex;
+    gap: 20px;
+    /* max-width: 550px; */
+}
+
+.payment-main-content {
+    width: 50%;
+    padding: 0px 5px 8px;
+}
+
+.payment-main-content-wrapper {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    padding: 5px;
+}
+
+.payment-main-content-wrapper p {
+    color: rgb(60, 65, 68);
+    font-size: 13px;
+}
+
+.payment-main-content-wrapper span {
+    font-weight: 700;
+    color: rgb(0, 0, 0);
+    font-size: 13px;
+}
+
+.payment-content-wrapper {
+    display: flex;
+    flex-direction: column;
+    /* gap: 15px; */
+}
+
+.payment-payments-wrapper {
+    /* max-width: 580px; */
+    padding: 5px;
+    background-color: lightgray;
+    box-shadow: rgba(24, 26, 27, 0.25) 0px 5px 7px -5px inset, rgba(24, 26, 27, 0.25) 0px -3px 7px -5px inset;
+    width: 100%;
+    box-sizing: border-box;
+    /* margin-left: 200px; */
+    /* margin-right: 200px; */
+}
+
+.payment-subheader-text-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    row-gap: 3px;
+}
+
+.payment-subheader-description {
+    font-size: 16px;
+    color: rgb(60, 65, 68);
+}
+
+.payment-subheader-amount{
+    font-size: 20px;
+    font-weight: bold;
+    color: rgb(60, 65, 68);
+}
+
+.payment-subheader-date {
+    font-size: 12px;
+    color: #999;
+}

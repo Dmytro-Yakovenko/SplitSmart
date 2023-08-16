@@ -1,0 +1,24 @@
+/* .form{
+    display:flex;
+    flex-direction: column;
+    max-width: 450px;
+    padding: 15px;
+    width: 100%;
+    gap:15px;
+    justify-content: center;
+}
+.form>button{
+    background-color: #1CC29F;
+    padding: 15px;
+    border: none;
+    border-radius: 4px;
+    color: #fff;
+    max-width: 110%;
+}
+.label input{
+    display: block;
+    padding: 10px;
+    margin-top: 10px;
+    width: 95%;
+
+} */

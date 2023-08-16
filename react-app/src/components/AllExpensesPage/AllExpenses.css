@@ -1,0 +1,121 @@
+#all-expenses {
+    margin-left: 200px;
+    margin-right: 200px;
+    /* margin-top: 35px; */
+}
+
+.expense-header {
+    display: grid;
+    grid-template-columns: 5% 5% auto 15% 15% 5%;
+    grid-template-rows: 60px;
+    border: rgb(184, 180, 174) 1px solid;
+}
+
+.expense-header-date {
+    justify-self: center;
+    align-self: center;
+}
+
+.expense-header-date > * {
+    margin: 0;
+    text-align: center;
+    color: gray;
+    font-size: 12pt
+}
+
+.expense-header-day {
+    font-size: 20pt;
+}
+
+.expense-header-logo {
+    justify-self: center;
+    align-self: center;
+    height: 30px;
+}
+
+.expense-header-description {
+    align-self: center;
+    font-weight: bold;
+    margin: 10px;
+    font-size: 12pt;
+}
+
+.expense-header-A {
+    align-self: center;
+    text-align: right;
+    margin-right: 10px;
+}
+
+.expense-header-B {
+    align-self: center;
+    text-align: left;
+    margin-left: 10px;
+}
+
+.expense-header-A p:first-child,
+.expense-header-B p:first-child {
+    margin: 5px 0;
+    color: gray;
+    font-size: 12pt;
+}
+
+.expense-header-A p:nth-child(2),
+.expense-header-B p:nth-child(2) {
+    margin: 5px 0;
+}
+
+.payment-header {
+    display: grid;
+    grid-template-columns: 5% auto 15% 15% 5%;
+    grid-template-rows: 40px;
+    border: rgb(184, 180, 174) 1px solid;
+}
+
+.payment-header-logo {
+    justify-self: center;
+    align-self: center;
+    height: 30px;
+}
+
+.payment-header-description {
+    align-self: center;
+    text-align: left;
+    margin: 10px;
+    font-size: 12pt;
+}
+
+.payment-header-A {
+    align-self: center;
+    text-align: right;
+    margin-right: 10px;
+    color: gray;
+    font-size: 12pt;
+}
+
+.payment-header-B {
+    align-self: center;
+    text-align: left;
+    margin-left: 10px;
+}
+
+.orange-amount {
+    color: rgb(255, 102, 56);
+}
+
+.teal-amount {
+    color: rgb(82, 197, 167);
+}
+
+.delete-expense,
+.delete-payment {
+    justify-self: center;
+    align-self: center;
+    border: none;
+    background: none;
+    color: red;
+}
+
+.delete-expense:hover,
+.delete-payment:hover {
+    text-decoration: underline;
+}

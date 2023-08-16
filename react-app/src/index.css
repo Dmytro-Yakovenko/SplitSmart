@@ -1,0 +1,94 @@
+/* TODO Add site wide styles */
+
+html,
+body,
+#root {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%
+}
+
+* {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12pt;
+    font-style: normal;
+}
+
+.hidden {
+    display: none;
+}
+
+h1 {
+    font-size: 24pt;
+    /* font-style: bold; */
+}
+
+h2 {
+    font-size: 18pt;
+    /* font-style: bold; */
+}
+
+button {
+    font-size: 12pt;
+    font-style: normal;
+    width: auto;
+    margin: 5px 0px;
+    border-radius: 5px;
+    border-width: 1px;
+    padding: 8px;
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+button.normal {
+    background-color: #ffffff;
+    color: rgb(82, 197, 167);
+    border: none;
+}
+
+button.accent {
+    background-color: rgb(255, 102, 56);
+    color: #ffffff;
+    border-color: rgb(233, 92, 50);
+}
+
+button.primary {
+    background-color: rgb(82, 197, 167);
+    color: #ffffff;
+    border-color: rgb(75, 177, 151);
+}
+
+input {
+    box-sizing: border-box;
+    /* background-color: #e8f0fe; */
+    /* margin: 2px 0px; */
+}
+
+form {
+    display: flex;
+    justify-content: left;
+    flex-direction: column;
+    /* padding: 20px; */
+}
+
+.error-msg {
+    color: red;
+    /* padding: 0px;
+    margin: 5px */
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+a:hover {
+    cursor: pointer;
+}
+
+.button:disabled{
+    color:grey
+}

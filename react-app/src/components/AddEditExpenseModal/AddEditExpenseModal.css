@@ -1,0 +1,97 @@
+.add-edit-expense-form {
+    background-color: #f8f8f8;
+    padding: 20px;
+    border-radius: 4px;
+  }
+
+  .add-edit-expense-form h2 {
+    margin-bottom: 20px;
+    font-size: 24px;
+  }
+
+  .form-group {
+    margin-bottom: 15px;
+  }
+
+  .form-group label {
+    font-weight: bold;
+  }
+
+  .form-group input[type="text"],
+  .form-group input[type="number"] {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+
+  .friend-selection {
+    margin-bottom: 15px;
+  }
+
+  .selected-friends {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+
+  .selected-friend {
+    display: flex;
+    align-items: center;
+    background-color: #e2e2e2;
+    padding: 5px 10px;
+    border-radius: 4px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+  }
+
+  .selected-friend button.remove-button {
+    margin-left: 5px;
+    background-color: transparent;
+    border: none;
+    color: #888;
+    cursor: pointer;
+  }
+
+  .friend-list {
+    margin-top: 10px;
+  }
+
+  .friend {
+    padding: 5px;
+    cursor: pointer;
+  }
+
+  .friend.selected {
+    background-color: #e2e2e2;
+  }
+
+  .dropdown-button {
+    background-color: #f8f8f8;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 8px 15px;
+    font-size: 14px;
+    cursor: pointer;
+  }
+
+  .cancel-button,
+  .save-button {
+    padding: 8px 15px;
+    font-size: 14px;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+  .cancel-button {
+    margin-right: 10px;
+    background-color: #ccc;
+    border: none;
+    color: #fff;
+  }
+
+  .save-button {
+    background-color: #007bff;
+    border: none;
+    color: #fff;
+  }
