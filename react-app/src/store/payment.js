@@ -7,7 +7,6 @@ const SET_RECEIVED_PAYMENTS = 'payment/SET_RECEIVED_PAYMENTS';
 const SET_SENT_PAYMENTS = 'payment/SET_SENT_PAYMENTS';
 const ADD_PAYMENT = 'payment/ADD_PAYMENT';
 const DELETE_PAYMENT = 'payment/DELETE_PAYMENT';
-// const SET_SELECTED_PAYMENT = 'payment/SET_SELECTED_PAYMENT';
 
 // Action creators
 const setReceivedPayments = (payments) => ({
@@ -30,10 +29,6 @@ const deletePayment = (paymentId) => ({
   payload: paymentId,
 });
 
-// const setSelectedPayment = (payment) => ({
-//   type: SET_SELECTED_PAYMENT,
-//   payload: payment,
-// });
 
 // Async action: Fetch received payments
 export const fetchReceivedPayments = () => async (dispatch) => {
@@ -63,77 +58,62 @@ export const fetchSentPayments = () => async (dispatch) => {
   }
 };
 
-// Async action: Fetch payment by ID
-// export const fetchPaymentById = (paymentId) => async (dispatch) => {
-//     try {
-//       const response = await fetch(`/api/payments/${paymentId}`);
-//       if (!response.ok) {
-//         throw new Error('Failed to fetch payment');
-//       }
-//       const data = await response.json();
-//       dispatch(setSelectedPayment(data));
-//     } catch (error) {
-//       console.error('Error fetching payment:', error.message);
-//     }
-//   };
-
 // Async action: Create a payment
 export const createPayment = (amount, friendshipId) => async (dispatch) => {
-    try {
-      const response = await fetch('/api/payments/', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          amount,
-          friendship: friendshipId,
-        }),
-      });
-      if (!response.ok) {
-        throw new Error('Failed to create payment');
-      }
-      const data = await response.json();
-      dispatch(addPayment(data));
-      dispatch(fetchReceivedPayments());
-      dispatch(fetchSentPayments());
-      dispatch(expenseActions.getCreatedExpenses());
-      dispatch(expenseActions.getSettledExpenses());
-      dispatch(expenseActions.getUnsettledExpenses());
-      dispatch(expenseActions.getSummary());
-      dispatch(friendActions.fetchFriendships());
-    } catch (error) {
-      console.error('Error creating payment:', error.message);
+  try {
+    const response = await fetch('/api/payments/', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        amount,
+        friendship: friendshipId,
+      }),
+    });
+    if (!response.ok) {
+      throw new Error('Failed to create payment');
     }
-  };
+    const data = await response.json();
+    dispatch(addPayment(data));
+    dispatch(fetchReceivedPayments());
+    dispatch(fetchSentPayments());
+    dispatch(expenseActions.getCreatedExpenses());
+    dispatch(expenseActions.getSettledExpenses());
+    dispatch(expenseActions.getUnsettledExpenses());
+    dispatch(expenseActions.getSummary());
+    dispatch(friendActions.fetchFriendships());
+  } catch (error) {
+    console.error('Error creating payment:', error.message);
+  }
+};
 
 // Async action: Delete a payment
 export const fetchDeletePayment = (paymentId) => async (dispatch) => {
-    try {
-      const response = await fetch(`/api/payments/${paymentId}`, {
-        method: 'DELETE',
-      });
-      if (!response.ok) {
-        throw new Error('Failed to delete payment');
-      }
-      dispatch(deletePayment(paymentId));
-      dispatch(fetchReceivedPayments());
-      dispatch(fetchSentPayments());
-      dispatch(expenseActions.getCreatedExpenses());
-      dispatch(expenseActions.getSettledExpenses());
-      dispatch(expenseActions.getUnsettledExpenses());
-      dispatch(expenseActions.getSummary());
-      dispatch(friendActions.fetchFriendships());
-    } catch (error) {
-      console.error('Error deleting payment:', error.message);
+  try {
+    const response = await fetch(`/api/payments/${paymentId}`, {
+      method: 'DELETE',
+    });
+    if (!response.ok) {
+      throw new Error('Failed to delete payment');
     }
-  };
+    dispatch(deletePayment(paymentId));
+    dispatch(fetchReceivedPayments());
+    dispatch(fetchSentPayments());
+    dispatch(expenseActions.getCreatedExpenses());
+    dispatch(expenseActions.getSettledExpenses());
+    dispatch(expenseActions.getUnsettledExpenses());
+    dispatch(expenseActions.getSummary());
+    dispatch(friendActions.fetchFriendships());
+  } catch (error) {
+    console.error('Error deleting payment:', error.message);
+  }
+};
 
 // Reducer
 const initialState = {
   receivedPayments: {},
-  sentPayments: {},
-  // selectedPayment: null,
+  sentPayments: {}
 };
 
 export default function paymentReducer(state = initialState, action) {
@@ -171,11 +151,6 @@ export default function paymentReducer(state = initialState, action) {
         ...state,
         sentPayments: updatedSentPayments,
       };
-    // case SET_SELECTED_PAYMENT:
-    //   return {
-    //     ...state,
-    //     selectedPayment: action.payload,
-    //   };
     default:
       return state;
   }

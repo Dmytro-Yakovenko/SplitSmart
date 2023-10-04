@@ -6,13 +6,13 @@ import ExpenseDetailsSection from "../ExpenseDetailsSection";
 
 function SettledItems({ items, user, friendship, deleteExpense, deletePayment }) {
 
-    function formatMoney(amount) {
+    const formatMoney = (amount) => {
         return "$" + String(Number(amount).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,'));
     };
 
     return (
         <div id="settled-items">
-            {items.map(obj => {
+            {items.map((obj) => {
                 const dateStr = new Date(obj.created_at).toDateString();
                 const dateMonth = `${dateStr.split(" ")[1].toUpperCase()}`;
                 const dateDay = `${dateStr.split(" ")[2]}`;
@@ -39,9 +39,6 @@ function SettledItems({ items, user, friendship, deleteExpense, deletePayment })
                                         <p>you lent {friendship.friend.short_name}</p>
                                         <p>{formatMoney(obj.participants[0].amount_due)}</p>
                                     </div>
-                                    {/* <button className="delete-expense" onClick={() => deleteExpense(obj.id, true, obj.type)}>
-                                    &#x2715;
-                                </button> */}
                                 </div>
                                 <ExpenseDetailsSection expenseId={obj.id} />
                             </>
@@ -69,9 +66,6 @@ function SettledItems({ items, user, friendship, deleteExpense, deletePayment })
                                         <p>{friendship.friend.short_name} lent you</p>
                                         <p>{formatMoney(obj.amount_due)}</p>
                                     </div>
-                                    {/* <button className="delete-expense" onClick={() => deleteExpense(obj.expense.id, true, obj.type)}>
-                                    &#x2715;
-                                </button> */}
                                 </div>
                                 <ExpenseDetailsSection expenseId={obj.expense.id} />
                             </>
@@ -93,9 +87,6 @@ function SettledItems({ items, user, friendship, deleteExpense, deletePayment })
                                     <div className="payment-header-B teal-amount">
                                         {formatMoney(obj.amount)}
                                     </div>
-                                    {/* <button className="delete-payment" onClick={() => deletePayment(obj.id)}>
-                                    &#x2715;
-                                </button> */}
                                 </div>
                                 <PaymentDetailsSection paymentId={obj.id} />
                             </>
@@ -116,9 +107,6 @@ function SettledItems({ items, user, friendship, deleteExpense, deletePayment })
                                     <div className="payment-header-B orange-amount">
                                         {formatMoney(obj.amount)}
                                     </div>
-                                    {/* <button className="delete-payment" onClick={() => deletePayment(obj.id)}>
-                                    &#x2715;
-                                </button> */}
                                 </div>
                                 <PaymentDetailsSection paymentId={obj.id} />
                             </>

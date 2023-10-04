@@ -44,7 +44,7 @@ function AllExpensesPage() {
   // const [items, setItems] = useState([]);
 
   useEffect(() => {
-    async function fetchData() {
+    const fetchData = async () => {
       await dispatch(expenseActions.getCreatedExpenses()).then(() =>
         setIsCreatedExpensesLoaded(true)
       );
@@ -60,36 +60,32 @@ function AllExpensesPage() {
       await dispatch(paymentActions.fetchReceivedPayments()).then(() =>
         setIsReceivedPaymentsLoaded(true)
       );
-    }
+    };
     fetchData();
   }, [dispatch]);
 
   let items = [];
 
-  // useEffect(() => {
   if (isCreatedExpensesLoaded && isSettledExpensesLoaded && isUnsettledExpensesLoaded && isSentPaymentsLoaded && isReceivedPaymentsLoaded) {
-    const userExpenses = createdExpenses.map(expenseObj => {
+    const userExpenses = createdExpenses.map((expenseObj) => {
       return { ...expenseObj, type: 'created' };
     });
-    const friendExpenses = [...unsettledExpenses, ...settledExpenses].map(expenseObj => {
+    const friendExpenses = [...unsettledExpenses, ...settledExpenses].map((expenseObj) => {
       return { ...expenseObj, type: 'charged' };
     });
-    const userSentPayments = sentPayments.map(paymentObj => {
+    const userSentPayments = sentPayments.map((paymentObj) => {
       return { ...paymentObj, type: 'sent' };
     });
-    const userReceivedPayments = receivedPayments.map(paymentObj => {
+    const userReceivedPayments = receivedPayments.map((paymentObj) => {
       return { ...paymentObj, type: 'received' };
     });
 
     items = [...userExpenses, ...friendExpenses, ...userSentPayments, ...userReceivedPayments].sort((e1, e2) => {
       return new Date(e2.created_at).getTime() - new Date(e1.created_at).getTime()
     });
-
-    // setIsInitialRender(false);
   }
-  // }, [isInitialRender, isCreatedExpensesLoaded, isSettledExpensesLoaded, isUnsettledExpensesLoaded, isSentPaymentsLoaded, isReceivedPaymentsLoaded, createdExpenses, receivedPayments, sentPayments, settledExpenses, unsettledExpenses]);
 
-  function formatMoney(amount) {
+  const formatMoney = (amount) => {
     return (
       "$" +
       String(
@@ -98,14 +94,15 @@ function AllExpensesPage() {
           .replace(/\d(?=(\d{3})+\.)/g, "$&,")
       )
     );
-  }
+  };
 
-  function deleteExpense(expenseId, type) {
+  const deleteExpense = (expenseId, type) => {
     let answer = window.confirm(
       "Are you sure you want to delete this expense? This will completely remove this expense for ALL people involved, not just you."
     );
     if (answer) {
       dispatch(expenseActions.deleteExpense(expenseId));
+      document.getElementById(`expense-details-${expenseId}`).classList.add('hidden');
       if (type === "created") {
         items =
           items.filter((obj) => {
@@ -118,7 +115,7 @@ function AllExpensesPage() {
           });
       }
     }
-  }
+  };
 
   function deletePayment(paymentId) {
     let answer = window.confirm(
@@ -126,6 +123,8 @@ function AllExpensesPage() {
     );
     if (answer) {
       dispatch(paymentActions.fetchDeletePayment(paymentId));
+      document.getElementById(`payment-details-${paymentId}`).classList.add('hidden');
+
       items =
         items.filter((obj) => {
           return !(
@@ -145,7 +144,7 @@ function AllExpensesPage() {
       <MainHeader />
       <RightSummaryBar />
       <div id="all-expenses">
-        {items.map(obj => {
+        {items.map((obj) => {
           const dateStr = new Date(obj.created_at).toDateString();
           const dateMonth = `${dateStr.split(" ")[1].toUpperCase()}`;
           const dateDay = `${dateStr.split(" ")[2]}`;
@@ -175,7 +174,10 @@ function AllExpensesPage() {
                       {obj.participants.length === 1 && <p>you lent {obj.participants[0].friendship.friend.short_name}</p>}
                       <p>{formatMoney(obj.amount - obj.participants[0].amount_due)}</p>
                     </div>
-                    <button id={`expense-${obj.id}`} className="delete-expense hidden" onClick={() => deleteExpense(obj.id, obj.type)}>
+                    <button id={`expense-${obj.id}`} className="delete-expense hidden" onClick={(e) => {
+                      deleteExpense(obj.id, obj.type);
+                      e.stopPropagation();
+                    }}>
                       &#x2715;
                     </button>
                   </div>
@@ -207,7 +209,10 @@ function AllExpensesPage() {
                       <p>{obj.friendship.user.short_name} lent you</p>
                       <p>{formatMoney(obj.amount_due)}</p>
                     </div>
-                    <button id={`expense-${obj.expense.id}`} className="delete-expense hidden" onClick={() => deleteExpense(obj.expense.id, obj.type)}>
+                    <button id={`expense-${obj.expense.id}`} className="delete-expense hidden" onClick={(e) => {
+                      deleteExpense(obj.expense.id, obj.type);
+                      e.stopPropagation();
+                    }}>
                       &#x2715;
                     </button>
                   </div>
@@ -233,7 +238,10 @@ function AllExpensesPage() {
                     <div className="payment-header-B teal-amount">
                       {formatMoney(obj.amount)}
                     </div>
-                    <button id={`payment-${obj.id}`} className="delete-payment hidden" onClick={() => deletePayment(obj.id)}>
+                    <button id={`payment-${obj.id}`} className="delete-payment hidden" onClick={(e) => {
+                      deletePayment(obj.id);
+                      e.stopPropagation();
+                    }}>
                       &#x2715;
                     </button>
                   </div>
@@ -258,7 +266,10 @@ function AllExpensesPage() {
                     <div className="payment-header-B orange-amount">
                       {formatMoney(obj.amount)}
                     </div>
-                    <button id={`payment-${obj.id}`} className="delete-payment hidden" onClick={() => deletePayment(obj.id)}>
+                    <button id={`payment-${obj.id}`} className="delete-payment hidden" onClick={(e) => {
+                      deletePayment(obj.id);
+                      e.stopPropagation();
+                    }}>
                       &#x2715;
                     </button>
                   </div>

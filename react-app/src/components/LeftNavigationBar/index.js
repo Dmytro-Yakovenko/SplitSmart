@@ -9,7 +9,7 @@ import logo from './splitsmart-logo.png';
 
 function LeftNavigationBar() {
     const dispatch = useDispatch();
-    const activeFriends = useSelector(state => Object.values(state.friend.friendships));
+    const activeFriends = useSelector((state) => Object.values(state.friend.friendships));
     const [isLoaded, setIsLoaded] = useState(false);
 
     useEffect(() => {
@@ -19,16 +19,16 @@ function LeftNavigationBar() {
 
     return (
         <div className="left-nav-bar">
-            <NavLink to="/dashboard"><img className="dashboard-logo" src={logo} alt="dashboard-logo" />Dashboard</NavLink>
-            <NavLink to="/all"><i className="fas fa-solid fa-list" />All Expenses</NavLink>
+            <NavLink to="/dashboard" activeClassName="active-nav-link"><img className="dashboard-logo" src={logo} alt="dashboard-logo" />Dashboard</NavLink>
+            <NavLink to="/all" activeClassName="active-nav-link"><i className="fas fa-solid fa-list" />All Expenses</NavLink>
             <div className="friends-list-header">FRIENDS
                 <OpenModalButton
                     modalComponent={<AddFriendModal />}
                     buttonText="+ add"
                 />
             </div>
-            {isLoaded && activeFriends?.map(friendObj => (
-                <NavLink key={friendObj.id} to={`/friends/${friendObj.id}`}><i className="fas fa-solid fa-user" />{friendObj.friend.name}</NavLink>
+            {isLoaded && activeFriends?.map((friendObj) => (
+                <NavLink key={friendObj.id} to={`/friends/${friendObj.id}`} activeClassName="active-nav-link"><i className="fas fa-solid fa-user" />{friendObj.friend.name}</NavLink>
             ))}
         </div>
     );

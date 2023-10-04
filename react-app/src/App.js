@@ -8,6 +8,7 @@ import DashboardPage from "./components/DashboardPage";
 import AllExpensesPage from "./components/AllExpensesPage";
 import EditFriendPage from "./components/EditFriendPage";
 import FriendPage from "./components/FriendPage";
+import SettingsPage from "./components/SettingsPage";
 import { authenticate } from "./store/session";
 
 function App() {
@@ -21,9 +22,6 @@ function App() {
   return (
     <>
       {isLoaded && (
-
-
-
         <Switch>
           <Route exact path="/">
             <AboutPage />
@@ -33,6 +31,9 @@ function App() {
           </Route>
           <Route path="/signup">
             <SignupFormPage />
+          </Route>
+          <Route path="/settings">
+            <SettingsPage />
           </Route>
           <Route path="/dashboard">
             <DashboardPage />

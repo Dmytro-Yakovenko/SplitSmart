@@ -62,22 +62,6 @@ export const fetchFriendshipById = (friendshipId) => async (dispatch) => {
 };
 
 export const createFriendship = (email) => async (dispatch) => {
-  // try {
-  //   const response = await fetch('/api/friendships/', {
-  //     method: 'POST',
-  //     headers: { 'Content-Type': 'application/json' },
-  //     body: JSON.stringify({ email }),
-  //   });
-  //   if (response.ok) {
-  //     const data = await response.json();
-  //     dispatch(addFriendship(data));
-  //   } else {
-  //     throw new Error('Failed to create friendship');
-  //   }
-  // } catch (error) {
-  //   console.error(error);
-  // }
-
   const response = await fetch('/api/friendships/', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
@@ -102,7 +86,7 @@ export const createFriendship = (email) => async (dispatch) => {
   }
 };
 
-export const updateFriendship = (id) => async dispatch => {
+export const updateFriendship = (id) => async (dispatch) => {
   try {
     const response = await fetch(`/api/friendships/${id}`, {
       method: 'PUT'

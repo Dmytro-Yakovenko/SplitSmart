@@ -4,59 +4,47 @@
     background-repeat: repeat;
     width: 100%;
     height: 100%;
-    /* display: grid;
-    grid-template-rows: 200px 200px 200px;
-    grid-template-columns: 200px 200px;
-    grid-template-areas:
-    "slideshow slideshow"
-    "track-balances organize-expenses"
-    "add-expenses-easily pay-friends-back"; */
+    display: flex;
+    flex-direction: column;
     place-items: center;
-    justify-content: center;
+    justify-content: space-between;
     text-align: center;
 }
 
-/* .slideshow {
-    grid-area: slideshow;
-}
-
-.track-balances {
-    grid-area: track-balances;
-}
-
-.organize-expenses {
-    grid-area: organize-expenses;
-}
-
-.add-expenses-easily {
-    grid-area: add-expenses-easily;
-}
-
-.pay-friends-back {
-    grid-area: pay-friends-back;
-} */
-
 .slideshow {
-    padding: 50px;
+    width: 90%;
+    margin: 50px;
     text-align: left;
-    /* height: 500px; */
 }
 
 .about-page-images {
+    width: inherit;
+    height: min-content;
     display: flex;
-    /* flex-wrap: wrap;
-    justify-content: center; */
-    overflow: scroll;
+    column-gap: 20px;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    padding: 5px;
+}
+
+.about-page-images h2 {
+    color: rgb(255, 255, 255);
+    padding: 10px;
+    margin: 5px 0;
+    background-color: rgb(82, 197, 167);
+    border: 0.5px solid rgb(0, 0, 0);
+    border-radius: 10px;
 }
 
 .about-page-images img {
-    min-width: 500px;
-    /* max-width: 500px; */
+    height: 350px;
+    border: 0.5px solid rgb(0, 0, 0);
+    border-radius: 10px;
 }
 
 #swap-text::before {
     content: " on trips.";
-    color: #1CC29F;
+    color: rgb(28, 194, 159);
     font-size: 24pt;
     font-weight: bolder;
     animation: swap-text 12s ease-in infinite;
@@ -65,25 +53,25 @@
 @keyframes swap-text {
     0% {
         content: " on trips.";
-        color: #1CC29F;
+        color: rgb(28, 194, 159);
     }
     25% {
         content: " with housemates.";
-        color: #8656CD;
+        color: rgb(134, 86, 205);
     }
     50% {
         content: " with your partner.";
-        color: #A6002F;
+        color: rgb(166, 0, 47);
     }
     75% {
         content: " with anyone.";
-        color: #1CC29F;
+        color: rgb(28, 194, 159);
     }
 }
 
 .signup-button {
     background-color: rgb(82, 197, 167);
-    color: #ffffff;
+    color: rgb(255, 255, 255);
     margin-top: 20px;
     padding: 15px 60px;
     border-radius: 5px;
@@ -92,15 +80,15 @@
 
 @keyframes swap-color {
     0% {
-        background-color: #1CC29F;
+        background-color: rgb(28, 194, 159);
     }
     25% {
-        background-color: #8656CD;
+        background-color: rgb(134, 86, 205);
     }
     50% {
-        background-color: #A6002F;
+        background-color: rgb(166, 0, 47);
     }
     75% {
-        background-color: #1CC29F;
+        background-color: rgb(28, 194, 159);
     }
 }

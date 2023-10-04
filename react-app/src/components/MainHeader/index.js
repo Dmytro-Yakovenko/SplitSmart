@@ -11,7 +11,7 @@ const MainHeader = () => {
   const friendships = useSelector((state) => Object.values(state.friend.friendships));
   let friendship;
 
-  const currentPage = (function () {
+  const currentPage = (() => {
     const path = location.pathname;
     switch (path) {
       case '/dashboard':

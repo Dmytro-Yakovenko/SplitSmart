@@ -6,11 +6,11 @@
     justify-content: space-between;
     align-items: center;
     padding: 20px 10px;
-    background-color: rgb(220, 218, 215);
+    background-color: rgb(238, 238, 238);
 }
 
 .button:disabled{
-    color: grey;
+    color: rgb(128, 128, 128);
 }
 
 .main-header-title {
@@ -24,7 +24,6 @@
     object-fit: cover;
 }
 
-
 .main-header-buttons > button {
     margin: 0px 5px;
 }
@@ -37,17 +36,17 @@
 
 .main-header-buttons > button:first-child {
     background-color: rgb(255, 102, 56);
-    color: #ffffff;
+    color: rgb(255, 255, 255);
     border-color: rgb(233, 92, 50);
 }
 
 .main-header-buttons > button:nth-child(2) {
     background-color: rgb(82, 197, 167);
-    color: #ffffff;
+    color: rgb(255, 255, 255);
     border-color: rgb(75, 177, 151);
 }
 
 .main-header-buttons:disabled {
-    background-color: grey;
+    background-color: rgb(128, 128, 128);
     opacity: 0.5;
 }

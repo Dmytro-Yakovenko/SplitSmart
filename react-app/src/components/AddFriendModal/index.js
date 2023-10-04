@@ -30,7 +30,7 @@ function AddFriendModal() {
                 <h2><img className="add-friend-logo" src={logo} alt="add-friend-logo" />Invite friends</h2>
                 {errors.length > 0 && <ul>
                     {errors.map((error, idx) => (
-                        <li key={idx}>{error}</li>
+                        <li key={idx} className="error-msg">{error}</li>
                     ))}
                 </ul>}
                 <input

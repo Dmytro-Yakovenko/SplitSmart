@@ -14,4 +14,3 @@ def amount_is_whole(form, field):
 class PaymentForm(FlaskForm):
     friendship = SelectField('friendship', coerce=int)
     amount = DecimalField('amount', validators=[amount_is_whole])
-    # amount = DecimalField('amount', validators=[NumberRange(min=1, message='Payment amount must be at least $1.'), amount_is_whole])

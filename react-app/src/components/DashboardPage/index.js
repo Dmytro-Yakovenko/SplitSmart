@@ -48,8 +48,6 @@ function DashboardPage() {
   //redirect if not auth
   if (!sessionUser) return <Redirect to="/" />;
 
-  //render
-
   if (Number(summary?.balance) == 0) {
     return (
       <>
@@ -69,7 +67,7 @@ function DashboardPage() {
         <TopNavigationBar />
         <MainHeader />
         <RightSummaryBar />
-      <main className="dashboard-main">
+        <main className="dashboard-main">
           <section className="dashboard-subheader">
             <ul className="dashboard-subheader-list">
               <li>

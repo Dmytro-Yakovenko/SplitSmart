@@ -60,37 +60,37 @@ const removeExpense = (id) => {
 };
 
 // store.dispatch();
-export const getSummary = () => async dispatch => {
+export const getSummary = () => async (dispatch) => {
     const response = await fetch('/api/expenses/summary');
     const data = await response.json();
 	dispatch(loadSummary(data));
 	return response;
 };
-export const getCreatedExpenses = () => async dispatch => {
+export const getCreatedExpenses = () => async (dispatch) => {
     const response = await fetch('/api/expenses/');
     const data = await response.json();
     dispatch(loadCreatedExpenses(data.expenses));
     return response;
 };
-export const getUnsettledExpenses = () => async dispatch => {
+export const getUnsettledExpenses = () => async (dispatch) => {
     const response = await fetch('/api/expenses/unsettled');
     const data = await response.json();
 	dispatch(loadUnsettledExpenses(data.unsettled));
 	return response;
 };
-export const getSettledExpenses = () => async dispatch => {
+export const getSettledExpenses = () => async (dispatch) => {
     const response = await fetch('/api/expenses/settled');
     const data = await response.json();
 	dispatch(loadSettledExpenses(data.settled));
 	return response;
 };
-export const getCurrentExpense = (id) => async dispatch => {
+export const getCurrentExpense = (id) => async (dispatch) => {
     const response = await fetch(`/api/expenses/${id}`);
 	const data = await response.json();
 	dispatch(loadCurrentExpense(data));
     return response;
 };
-export const createExpense = (description, amount, friends) => async dispatch => {
+export const createExpense = (description, amount, friends) => async (dispatch) => {
     const response = await fetch('/api/expenses/', {
         method: 'POST',
         headers: {
@@ -111,7 +111,7 @@ export const createExpense = (description, amount, friends) => async dispatch =>
     dispatch(friendActions.fetchFriendships());
     return response;
 };
-export const updateExpense = (id, description, amount, friends) => async dispatch => {
+export const updateExpense = (id, description, amount, friends) => async (dispatch) => {
     const response = await fetch(`/api/expenses/${id}`, {
         method: 'PUT',
         headers: {
@@ -132,7 +132,7 @@ export const updateExpense = (id, description, amount, friends) => async dispatc
     dispatch(friendActions.fetchFriendships());
     return response;
 };
-export const deleteExpense = (id) => async dispatch => {
+export const deleteExpense = (id) => async (dispatch) => {
     const response = await fetch(`/api/expenses/${id}`, {
         method: 'DELETE'
     });

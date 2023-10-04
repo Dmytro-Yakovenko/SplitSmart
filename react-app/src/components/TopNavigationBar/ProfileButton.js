@@ -13,13 +13,10 @@ function ProfileButton({ user }) {
     setShowMenu(!showMenu);
   };
 
+  const closeMenu = () => setShowMenu(false);
+
   useEffect(() => {
     if (!showMenu) return;
-    const closeMenu = (e) => {
-      if (!ulRef.current.contains(e.target)) {
-        setShowMenu(false);
-      }
-    };
     document.addEventListener("click", closeMenu);
     return () => document.removeEventListener("click", closeMenu);
   }, [showMenu]);
@@ -27,7 +24,10 @@ function ProfileButton({ user }) {
   const handleLogout = (e) => {
     e.preventDefault();
     dispatch(logout());
+    closeMenu();
+    history.push('/');
   };
+
   const ulClassName = "profile-dropdown" + (showMenu ? "" : " hidden");
 
   return (
@@ -42,6 +42,9 @@ function ProfileButton({ user }) {
             <ul className={ulClassName}>
               <li> Hello, </li>
               <li>{user.name}!</li>
+              <button className="settings" onClick={() => history.push('/settings')}>
+                Settings
+              </button>
               <button className="log-out" onClick={handleLogout}>
                 Log Out
               </button>
@@ -49,16 +52,6 @@ function ProfileButton({ user }) {
           </>
         ) : (
           <>
-            {/* <li>
-              <NavLink to="/login" className="navigation-link nav-login">
-                Log in
-              </NavLink>
-            </li>
-            <li>
-              <NavLink to="/signup" className="navigation-link nav-signup">
-                Sign up
-              </NavLink>
-            </li> */}
             <button className='normal' onClick={() => history.push('/login')}>
               Log in
             </button>

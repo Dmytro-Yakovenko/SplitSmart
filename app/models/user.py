@@ -15,7 +15,7 @@ class User(db.Model, UserMixin):
     last_name = db.Column(db.String(255), nullable=False)
     email = db.Column(db.String(255), nullable=False, unique=True)
     phone_number = db.Column(db.String(10), unique=True)
-    image_url = db.Column(db.String(255), nullable=False, default="https://i.ibb.co/nLrYRrP/default.png")
+    image_url = db.Column(db.String(255), nullable=False, default="https://splitsmart-aa-ai.s3.us-west-1.amazonaws.com/default.png")
     hashed_password = db.Column(db.String(255), nullable=False)
     created_at = db.Column(db.DateTime, nullable=False, default=datetime.utcnow)
     updated_at = db.Column(db.DateTime, nullable=False, default=datetime.utcnow, onupdate=datetime.utcnow)

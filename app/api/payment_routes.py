@@ -7,13 +7,6 @@ from app.api.auth_routes import validation_errors_to_error_messages
 payment_routes = Blueprint('payments', __name__)
 
 
-# def format_amount(amount):
-#     """
-#     Format the amount as a dollar amount
-#     """
-#     return "${:.2f}".format(amount)
-
-
 @payment_routes.route('/', methods=['POST'])
 @login_required
 def create_payment():

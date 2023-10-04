@@ -6,7 +6,6 @@ import { signUp } from "../../store/session";
 import './SignupForm.css';
 import logo from './splitsmart-logo.png';
 
-
 function SignupFormPage() {
   const dispatch = useDispatch();
   const history = useHistory();
@@ -40,7 +39,7 @@ function SignupFormPage() {
       <NavLink to="/" className="signup-form-image"><img src={logo} alt="splitsmart-logo" className="signup-logo" /></NavLink>
       <form className="signup-form" onSubmit={handleSubmit}>
         {errors.length > 0 && <ul>
-          {errors.map((error, idx) => <li key={idx}>{error}</li>)}
+          {errors.map((error, idx) => <li key={idx} className="error-msg">{error}</li>)}
         </ul>}
         <label>Hi there! My name is</label>
           <input
@@ -61,12 +60,6 @@ function SignupFormPage() {
             type="text"
             value={phoneNumber}
             onChange={(e) => setPhoneNumber(e.target.value)}
-          />
-        <label>Here's my profile picture:</label>
-          <input
-            type="text"
-            value={imgURL}
-            onChange={(e) => setImgURL(e.target.value)}
           />
         <label>And here's my password:</label>
           <input
