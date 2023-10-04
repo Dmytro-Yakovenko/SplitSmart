@@ -4,7 +4,7 @@ SplitSmart is a Splitwise clone where users can add friends, charge expenses to 
 
 **Live Site:** [SplitSmart](https://splitsmart.onrender.com)
 
-**Created By:** [Aurora Ignacio](https://github.com/bellaignacio) | Justin Duncan | Dmytro Yakovenko
+**Created By:** [Dmytro Yakovenko](https://github.com/Dmytro-Yakovenko) | Justin Duncan | Aurora Ignacio
 
 **Technologies Used:** [Python](https://docs.python.org/3/) | [JavaScript](https://devdocs.io/javascript/) | [PostgreSQL](https://www.postgresql.org/docs/) | [Flask](https://flask.palletsprojects.com/en/2.3.x/) | [SQLAlchemy](https://docs.sqlalchemy.org/en/20/) | [React](https://react.dev/) | [Redux](https://redux.js.org/) | [Amazon Web Services S3](https://docs.aws.amazon.com/AmazonS3/latest/userguide/Welcome.html)
 
