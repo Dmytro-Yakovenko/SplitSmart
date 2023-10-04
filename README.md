@@ -17,7 +17,7 @@ SplitSmart is a Splitwise clone where users can add friends, charge expenses to 
 
 ## How to build & run the project locally:
 
- 1. Clone this GitHub repository [bellaignacio/splitwise-clone-flask](https://github.com/bellaignacio/splitwise-clone-flask) onto your local machine.
+ 1. Clone this GitHub repository [dmytro-yakovenko/splitwise-clone-flask](https://github.com/Dmytro-Yakovenko/SplitSmart) onto your local machine.
  2. Set up your own AWS S3 Bucket.
  3. Create a `.env` file inside the root directory with the proper settings for your development environment. See the `example.env` file.
  4. Inside the root directory, run the following command to install Python dependencies
