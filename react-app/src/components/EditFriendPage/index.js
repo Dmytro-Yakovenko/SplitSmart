@@ -11,16 +11,16 @@ function EditFriendPage() {
     const { id } = useParams();
     const dispatch = useDispatch();
     const history = useHistory();
-    const sessionUser = useSelector(state => state.session.user);
-    const friendship = useSelector(state => state.friend.selectedFriendship);
+    const sessionUser = useSelector((state) => state.session.user);
+    const friendship = useSelector((state) => state.friend.selectedFriendship);
     const [isFriendshipLoaded, setIsFriendshipLoaded] = useState(false);
     const [errors, setErrors] = useState([]);
-    
+
     useEffect(() => {
-        async function fetchData() {
+        const fetchData = async () => {
             await dispatch(friendActions.fetchFriendshipById(id))
                 .then(() => setIsFriendshipLoaded(true));
-        }
+        };
         fetchData();
     }, [dispatch, id]);
 
@@ -43,7 +43,7 @@ function EditFriendPage() {
                 <h1>Edit friend info</h1>
                 {errors.length > 0 && <ul>
                     {errors.map((error, idx) => (
-                        <li key={idx}>{error}</li>
+                        <li key={idx} className="error-msg">{error}</li>
                     ))}
                 </ul>}
                 <div>{friendship.friend.email}</div>

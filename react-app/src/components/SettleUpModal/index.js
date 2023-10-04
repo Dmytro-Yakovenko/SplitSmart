@@ -4,34 +4,29 @@ import { useLocation } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { useModal } from '../../context/Modal';
 import { createPayment } from '../../store/payment';
+import './SettleUp.css';
 
 function SettleUpModal({ billAmount }) {
-    const { closeModal } = useModal();
-    const dispatch = useDispatch();
-    const [amount, setAmount] = useState('');
-    const location = useLocation();
-    const friendshipId = Number(location.pathname.split('/')[2]);
-    const friendships = useSelector(state => Object.values(state.friend.friendships));
-    const friendship = friendships.find(friendship => friendship.id === friendshipId);
-    const friend = friendship?.friend;
-    const friendName = friend?.name || '';
-    const totalBillAmount = friendship?.bill
+  const { closeModal } = useModal();
+  const dispatch = useDispatch();
+  const [amount, setAmount] = useState('');
+  const location = useLocation();
+  const friendshipId = Number(location.pathname.split('/')[2]);
+  const friendships = useSelector((state) => Object.values(state.friend.friendships));
+  const friendship = friendships.find((friendship) => friendship.id === friendshipId);
+  const friend = friendship?.friend;
+  const friendName = friend?.name || '';
+  const totalBillAmount = friendship?.bill
 
+  useEffect(() => {
+    setAmount(Number(totalBillAmount).toFixed(2));
+  }, [totalBillAmount]);
+  const handleSubmit = (e) => {
+    e.preventDefault();
 
-    useEffect(() => {
-        setAmount(Number(totalBillAmount).toFixed(2));
-      }, [totalBillAmount]);
-    const handleSubmit = (e) => {
-        e.preventDefault();
-
-        // if (!amount) {
-        //   // Add validation for required fields
-        //   console.log('Please enter the amount.');
-        //   return;
-        // }
-        dispatch(createPayment(amount, friendshipId));
-        closeModal();
-      };
+    dispatch(createPayment(amount, friendshipId));
+    closeModal();
+  };
 
   return (
     <form className="settle-up-form" onSubmit={handleSubmit}>
@@ -40,7 +35,6 @@ function SettleUpModal({ billAmount }) {
         <label>You paid {friendName}</label>
       </div>
       <div className="form-group">
-        <label>Amount</label>
         <input
           type="number"
           value={amount}
@@ -53,7 +47,7 @@ function SettleUpModal({ billAmount }) {
         <button type="button" onClick={closeModal}>
           Cancel
         </button>
-        <button type="submit">Save</button>
+        <button className="primary" type="submit">Save</button>
       </div>
     </form>
   );

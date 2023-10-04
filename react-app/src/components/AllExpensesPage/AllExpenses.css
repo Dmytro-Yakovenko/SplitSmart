@@ -1,7 +1,6 @@
 #all-expenses {
     margin-left: 200px;
     margin-right: 200px;
-    /* margin-top: 35px; */
 }
 
 .expense-header {
@@ -19,7 +18,7 @@
 .expense-header-date > * {
     margin: 0;
     text-align: center;
-    color: gray;
+    color: rgb(128, 128, 128);
     font-size: 12pt
 }
 
@@ -30,7 +29,7 @@
 .expense-header-logo {
     justify-self: center;
     align-self: center;
-    height: 30px;
+    height: 40px;
 }
 
 .expense-header-description {
@@ -55,7 +54,7 @@
 .expense-header-A p:first-child,
 .expense-header-B p:first-child {
     margin: 5px 0;
-    color: gray;
+    color: rgb(128, 128, 128);
     font-size: 12pt;
 }
 
@@ -88,7 +87,7 @@
     align-self: center;
     text-align: right;
     margin-right: 10px;
-    color: gray;
+    color: rgb(128, 128, 128);
     font-size: 12pt;
 }
 
@@ -112,7 +111,7 @@
     align-self: center;
     border: none;
     background: none;
-    color: red;
+    color: rgb(255, 0, 0);
 }
 
 .delete-expense:hover,

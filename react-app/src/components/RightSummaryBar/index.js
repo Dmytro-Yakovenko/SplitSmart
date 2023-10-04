@@ -5,7 +5,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import * as expenseActions from '../../store/expense';
 import './RightSummary.css';
 
-function formatBalance(amount) {
+const formatBalance = (amount) => {
     const balance = amount[0] === '-' ? amount.substring(1) : amount;
     return "$" + String(Number(balance).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,'));
 };
@@ -15,10 +15,10 @@ function RightSummaryBar() {
     const dispatch = useDispatch();
     const location = useLocation();
     const history = useHistory();
-    const friendships = useSelector(state => Object.values(state.friend.friendships));
-    const balance = useSelector(state => state.expense.summary.balance);
+    const friendships = useSelector((state) => Object.values(state.friend.friendships));
+    const balance = useSelector((state) => state.expense.summary.balance);
 
-    const friendship = friendships.filter(friendship => friendship.id == id)[0];
+    const friendship = friendships.filter((friendship) => friendship.id == id)[0];
 
     useEffect(() => {
         dispatch(expenseActions.getSummary());
@@ -50,8 +50,6 @@ function RightSummaryBar() {
             </div>
         );
     }
-
-
 }
 
 export default RightSummaryBar;

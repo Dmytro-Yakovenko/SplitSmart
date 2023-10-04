@@ -1,0 +1,56 @@
+#settings-container {
+    margin: 50px auto 0px auto;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    max-width: 600px;
+    row-gap: 10px;
+}
+
+#settings-container h1 {
+    text-align: center;
+}
+
+#settings-form {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 20px 0;
+}
+
+#settings-image {
+    width: 250px;
+    display: flex;
+    flex-direction: column;
+}
+
+#settings-preview {
+    width: 200px;
+    height: 200px;
+    border: 1px solid rgb(0, 0, 0);
+    margin-bottom: 10px;
+}
+
+#settings-inputs {
+    display: flex;
+    width: 300px;
+    flex-direction: column;
+    row-gap: 10px;
+}
+
+#settings-upload {
+    width: 250px;
+    text-overflow: ellipsis;
+    margin: 10px 0;
+}
+
+#settings-preview-remove {
+    position: absolute;
+    padding: 0px 10px;
+    margin: 0;
+    width: min-content;
+    border: none;
+    background-color: transparent;
+    font-weight: bold;
+    color: red;
+}

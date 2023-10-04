@@ -1,0 +1,39 @@
+.settle-up-form {
+    padding: 20px;
+}
+
+.settle-up-form h2 {
+    margin-bottom: 10px;
+    font-size: 24px;
+}
+
+.form-group {
+    margin: 10px 0px;
+}
+
+.form-group label {
+    font-weight: bold;
+}
+
+.form-group input[type="text"],
+.form-group input[type="number"] {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid rgb(204, 204, 204);
+    border-radius: 4px;
+}
+
+.form-actions {
+    display: flex;
+    justify-content: flex-end;
+    padding: 10px 0px;
+    gap: 10px;
+}
+
+.cancel-button,
+.save-button {
+    padding: 8px 15px;
+    font-size: 14px;
+    border-radius: 4px;
+    cursor: pointer;
+}
