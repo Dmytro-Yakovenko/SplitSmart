@@ -9,6 +9,8 @@ import AllExpensesPage from "./components/AllExpensesPage";
 import EditFriendPage from "./components/EditFriendPage";
 import FriendPage from "./components/FriendPage";
 import SettingsPage from "./components/SettingsPage";
+import Footer from "./components/Footer"
+
 import { authenticate } from "./store/session";
 
 function App() {
@@ -48,7 +50,9 @@ function App() {
             <FriendPage />
           </Route>
         </Switch>
+       
       )}
+       <Footer/>
     </>
   );
 }
