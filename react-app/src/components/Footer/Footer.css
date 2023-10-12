@@ -1,7 +1,8 @@
 .footer {
     height: 80px;
     background-color: rgb(60, 188, 152);
-   
+
+   padding: 0 30px;
 }
 
 .footer-icon-link {
@@ -19,7 +20,13 @@ height: 50px;
 
 .footer-icon-wrapper {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     gap: 50px;
+}
+
+.person-link-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 15px;
 }
