@@ -6,6 +6,7 @@ import img_one from './img_one.png'
 import img_two from './img_two.png'
 import img_three from './img_three.png'
 import TopNavigationBar from "../TopNavigationBar";
+import Footer from "../Footer"
 
 function AboutPage() {
     const history = useHistory();
@@ -39,6 +40,7 @@ function AboutPage() {
                     </div>
                 </div>
             </div>
+            {/* <Footer/> */}
         </>
 
     );
