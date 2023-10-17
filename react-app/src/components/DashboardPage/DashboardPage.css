@@ -71,7 +71,7 @@ section {
     width: 100%;
     border-left-color: rgb(184, 180, 174);
     border-right-color: rgb(184, 180, 174);
-    height: 100vh;
+    /* height: 100vh; */
     box-shadow: rgba(24, 26, 27, 0.2) 0px 0px 12px;
 }
 
